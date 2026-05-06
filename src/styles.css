@@ -1,0 +1,138 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Sokab — Svensk områdeskontroll AB
+ * Forest & Moss palette + Libre Baskerville (display) / IBM Plex Sans (body).
+ */
+
+@theme inline {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", ui-serif, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-forest: var(--forest);
+  --color-moss: var(--moss);
+  --color-sage: var(--sage);
+  --color-mint: var(--mint);
+  --color-cream: var(--cream);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand */
+  --forest: oklch(0.32 0.05 150);   /* #1a3c2a */
+  --moss: oklch(0.42 0.06 150);     /* #2d5a3d */
+  --sage: oklch(0.62 0.07 145);     /* #5a8a5c */
+  --mint: oklch(0.82 0.06 145);     /* #a0c49d */
+  --cream: oklch(0.985 0.005 100);
+
+  /* Surfaces */
+  --background: oklch(0.99 0.005 100);
+  --foreground: oklch(0.22 0.02 150);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.02 150);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.02 150);
+
+  /* Semantic */
+  --primary: var(--forest);
+  --primary-foreground: oklch(0.985 0.005 100);
+  --secondary: oklch(0.95 0.015 145);
+  --secondary-foreground: var(--forest);
+  --muted: oklch(0.96 0.01 130);
+  --muted-foreground: oklch(0.45 0.02 150);
+  --accent: oklch(0.93 0.03 145);
+  --accent-foreground: var(--forest);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.9 0.012 145);
+  --input: oklch(0.9 0.012 145);
+  --ring: var(--moss);
+
+  --chart-1: var(--forest);
+  --chart-2: var(--moss);
+  --chart-3: var(--sage);
+  --chart-4: var(--mint);
+  --chart-5: oklch(0.7 0.05 100);
+}
+
+.dark {
+  --background: oklch(0.18 0.02 150);
+  --foreground: oklch(0.97 0.01 100);
+  --card: oklch(0.22 0.025 150);
+  --card-foreground: oklch(0.97 0.01 100);
+  --popover: oklch(0.22 0.025 150);
+  --popover-foreground: oklch(0.97 0.01 100);
+  --primary: var(--mint);
+  --primary-foreground: oklch(0.18 0.02 150);
+  --secondary: oklch(0.28 0.03 150);
+  --secondary-foreground: oklch(0.97 0.01 100);
+  --muted: oklch(0.28 0.03 150);
+  --muted-foreground: oklch(0.72 0.02 130);
+  --accent: oklch(0.32 0.04 150);
+  --accent-foreground: oklch(0.97 0.01 100);
+  --destructive: oklch(0.7 0.19 22);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: var(--sage);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+}
